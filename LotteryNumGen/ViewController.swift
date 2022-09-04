@@ -9,12 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Hello World!")
-    }
+    
+    let lottoNums = [
+                    Int.random(in: 1...59),
+                    Int.random(in: 1...59),
+                    Int.random(in: 1...59),
+                    Int.random(in: 1...59),
+                    Int.random(in: 1...59),
+                    Int.random(in: 1...59),
 
-
+                         ]
+    
+    
+    @IBOutlet weak var lottoDisplayArea: UILabel!
+    
+    @IBAction func lottoPlay(_ sender: UIButton) {
+     
+        
+        
+        lottoDisplayArea.text = "\(lottoNums.randomElement()!), \(lottoNums.randomElement()!),\(lottoNums.randomElement()!),\(lottoNums.randomElement()!),\(lottoNums.randomElement()!),\(lottoNums.randomElement()!),"
+}
+    
 }
 
